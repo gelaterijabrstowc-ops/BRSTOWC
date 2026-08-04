@@ -286,3 +286,47 @@ body::before {
     margin: 25px auto;
 
 }
+
+/* HERO ANIMATION */
+
+.hero-content {
+    animation: heroFade 1.2s ease forwards;
+}
+
+
+@keyframes heroFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+
+/* SLOW IMAGE MOVEMENT */
+
+.hero {
+
+    animation: slowZoom 18s infinite alternate ease-in-out;
+
+}
+
+
+@keyframes slowZoom {
+
+    from {
+        background-size: 100%;
+    }
+
+    to {
+        background-size: 110%;
+    }
+
+}
