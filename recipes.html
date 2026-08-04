@@ -159,27 +159,29 @@
 
     <div class="recipe-modal" id="recipeModal">
 
-    <div class="recipe-form">
+  <div class="recipe-form">
 
-        <span class="close" onclick="closeRecipeForm()">×</span>
+    <span class="close" onclick="closeRecipeForm()">×</span>
 
-        <h2>Nov recept</h2>
+    <h2>Nov recept</h2>
 
-        <input type="text" placeholder="Ime recepta">
+    <input id="recipeName" type="text" placeholder="Ime recepta">
 
-        <select>
-            <option>Fit</option>
-            <option>Sladice</option>
-            <option>Kosilo</option>
-        </select>
+    <select id="recipeCategory">
+        <option value="Fit">Fit</option>
+        <option value="Sladice">Sladice</option>
+        <option value="Kosilo">Kosilo</option>
+    </select>
 
-        <textarea placeholder="Sestavine"></textarea>
+    <textarea id="recipeIngredients" placeholder="Sestavine"></textarea>
 
-        <textarea placeholder="Postopek"></textarea>
+    <textarea id="recipeSteps" placeholder="Postopek"></textarea>
 
-        <button>
-            Objavi recept
-        </button>
+    <button onclick="addRecipe()">
+        Objavi recept
+    </button>
+
+</div>
 
     </div>
 
@@ -190,3 +192,5 @@
 
 </body>
 </html>
+
+<script type="module" src="js/recipes.js"></script>
