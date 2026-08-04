@@ -70,7 +70,7 @@
 
 
 
-<button class="add-recipe">
+<button class="add-recipe" onclick="openRecipeForm()">
     + Dodaj recept
 </button>
 
@@ -157,6 +157,33 @@
 
 </main>
 
+    <div class="recipe-modal" id="recipeModal">
+
+    <div class="recipe-form">
+
+        <span class="close" onclick="closeRecipeForm()">×</span>
+
+        <h2>Nov recept</h2>
+
+        <input type="text" placeholder="Ime recepta">
+
+        <select>
+            <option>Fit</option>
+            <option>Sladice</option>
+            <option>Kosilo</option>
+        </select>
+
+        <textarea placeholder="Sestavine"></textarea>
+
+        <textarea placeholder="Postopek"></textarea>
+
+        <button>
+            Objavi recept
+        </button>
+
+    </div>
+
+</div>
 
 
 <script src="js/main.js"></script>
