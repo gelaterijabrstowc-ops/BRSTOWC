@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
@@ -6,32 +9,36 @@
 
 
 body {
+    background: #efe6d5;
+    color: #2b241b;
     font-family: "Inter", sans-serif;
-    background: #f7f3ec;
-    color: #1f1f1f;
 }
 
+
+/* NAVBAR */
 
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 25px 8%;
+    padding: 22px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 10;
 
-    background: rgba(247,243,236,0.15);
-    backdrop-filter: blur(12px);
+    background: rgba(239,230,213,0.85);
+    backdrop-filter: blur(8px);
+
+    border-bottom: 1px solid rgba(43,36,27,0.15);
 }
 
 
 .logo {
     font-family: "Cormorant Garamond", serif;
-    font-size: 38px;
+    font-size: 42px;
     font-weight: 700;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
 }
 
 
@@ -42,46 +49,59 @@ nav {
 
 
 nav a {
+    color: #2b241b;
     text-decoration: none;
-    color: #1f1f1f;
-    font-size: 16px;
-    transition: 0.3s;
+    font-size: 15px;
+    position: relative;
 }
 
 
-nav a:hover {
-    color: #c76b32;
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 1px;
+    background: #8b5e3c;
+    transition: .3s;
 }
 
 
+nav a:hover::after {
+    width: 100%;
+}
+
+
+
+/* HERO */
 
 .hero {
 
-    height: 100vh;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 120px 10%;
 
     background:
     linear-gradient(
-        rgba(0,0,0,0.35),
-        rgba(0,0,0,0.45)
+        rgba(30,20,10,0.35),
+        rgba(30,20,10,0.35)
     ),
     url("../images/hero/food.png");
 
     background-size: cover;
     background-position: center;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    position: relative;
 }
 
 
 .hero-content {
 
-    text-align: center;
+    max-width: 650px;
     color: white;
-    max-width: 700px;
 
 }
 
@@ -89,8 +109,11 @@ nav a:hover {
 .hero h1 {
 
     font-family: "Cormorant Garamond", serif;
-    font-size: 100px;
-    letter-spacing: 10px;
+    font-size: clamp(70px, 10vw, 120px);
+
+    letter-spacing: 12px;
+
+    text-transform: uppercase;
 
 }
 
@@ -98,6 +121,8 @@ nav a:hover {
 .hero p {
 
     font-size: 20px;
+    line-height: 1.6;
+
     margin: 25px 0 40px;
 
 }
@@ -108,48 +133,82 @@ nav a:hover {
 
     display: inline-block;
 
-    background: #c76b32;
-    color:white;
+    background: #8b5e3c;
 
-    padding: 15px 35px;
+    color: white;
 
-    border-radius: 8px;
+    padding: 16px 35px;
 
-    text-decoration:none;
+    text-decoration: none;
 
-    transition:0.3s;
+    border-radius: 4px;
+
+    transition: .3s;
 
 }
 
 
 .hero-button:hover {
 
-    transform: translateY(-4px);
-    background:#a95727;
+    background: #6f472d;
+
+    transform: translateY(-3px);
 
 }
 
 
 
+/* SECTION */
+
 .welcome {
 
-    padding:100px 10%;
-    text-align:center;
+    padding: 100px 10%;
+
+    text-align: center;
 
 }
 
 
 .welcome h2 {
 
-    font-family:"Cormorant Garamond", serif;
-    font-size:60px;
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 65px;
+
+    margin-bottom: 20px;
 
 }
 
 
 .welcome p {
 
-    margin-top:20px;
-    font-size:18px;
+    max-width: 600px;
+
+    margin: auto;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+}
+
+
+
+/* PAPER EFFECT */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: .04;
+
+    background-image:
+    url("https://www.transparenttextures.com/patterns/paper-fibers.png");
 
 }
