@@ -205,3 +205,110 @@
     font-size:14px;
 
 }
+
+.recipe-modal {
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.5);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:20;
+
+}
+
+
+
+.recipe-form {
+
+    background:#efe6d5;
+
+    width:90%;
+
+    max-width:500px;
+
+    padding:40px;
+
+    border:1px solid #8b5e3c;
+
+}
+
+
+
+.recipe-form h2 {
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:45px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.recipe-form input,
+.recipe-form select,
+.recipe-form textarea {
+
+
+    width:100%;
+
+    padding:14px;
+
+    margin-bottom:15px;
+
+    background:#f8f1e4;
+
+    border:1px solid #c8b49a;
+
+    font-family:Inter,sans-serif;
+
+}
+
+
+
+.recipe-form textarea {
+
+    height:100px;
+
+    resize:none;
+
+}
+
+
+
+.recipe-form button {
+
+    width:100%;
+
+    padding:15px;
+
+    background:#8b5e3c;
+
+    color:white;
+
+    border:none;
+
+    cursor:pointer;
+
+}
+
+
+
+.close {
+
+    float:right;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+}
