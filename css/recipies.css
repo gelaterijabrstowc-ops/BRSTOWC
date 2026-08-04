@@ -115,3 +115,93 @@
     letter-spacing:1px;
 
 }
+
+.recipe-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:35px;
+
+}
+
+
+
+.recipe-card {
+
+    background:#f8f1e4;
+
+    border:1px solid rgba(43,36,27,0.15);
+
+    overflow:hidden;
+
+    transition:.4s;
+
+}
+
+
+
+.recipe-card:hover {
+
+    transform:translateY(-8px);
+
+}
+
+
+
+.recipe-card img {
+
+    width:100%;
+
+    height:280px;
+
+    object-fit:cover;
+
+}
+
+
+
+.recipe-info {
+
+    padding:25px;
+
+}
+
+
+
+.category {
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+    color:#8b5e3c;
+
+}
+
+
+
+.recipe-info h2 {
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:35px;
+
+    margin:15px 0;
+
+}
+
+
+
+.details {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    color:#6f5a43;
+
+    font-size:14px;
+
+}
