@@ -174,13 +174,28 @@ nav a:hover::after {
 
     color: white;
 
-    padding: 16px 35px;
+    padding: 16px 38px;
 
     text-decoration: none;
 
-    border-radius: 4px;
+    border-radius: 2px;
 
-    transition: .3s;
+    letter-spacing: 1px;
+
+    transition: .35s;
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+}
+
+
+.hero-button:hover {
+
+    background: transparent;
+
+    border-color: white;
+
+    transform: translateY(-5px);
 
 }
 
