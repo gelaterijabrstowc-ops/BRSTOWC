@@ -1,1 +1,117 @@
+.recipes-page {
 
+    padding: 150px 8% 80px;
+
+}
+
+
+.recipes-header {
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+
+.recipes-header span {
+
+    font-size:12px;
+
+    letter-spacing:5px;
+
+    color:#8b5e3c;
+
+}
+
+
+.recipes-header h1 {
+
+    font-family:"Cormorant Garamond", serif;
+
+    font-size:80px;
+
+    margin:15px 0;
+
+}
+
+
+
+.recipes-header p {
+
+    font-size:18px;
+
+}
+
+
+
+/* FILTER BUTTONS */
+
+
+.filters {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin-bottom:40px;
+
+}
+
+
+.filters button {
+
+    background:transparent;
+
+    border:1px solid #8b5e3c;
+
+    padding:12px 25px;
+
+    border-radius:3px;
+
+    cursor:pointer;
+
+    color:#2b241b;
+
+    transition:.3s;
+
+}
+
+
+.filters button:hover,
+.filters .active {
+
+    background:#8b5e3c;
+
+    color:white;
+
+}
+
+
+
+/* ADD BUTTON */
+
+
+.add-recipe {
+
+    display:block;
+
+    margin:0 auto 60px;
+
+    padding:15px 35px;
+
+    background:#2b241b;
+
+    color:white;
+
+    border:none;
+
+    cursor:pointer;
+
+    border-radius:3px;
+
+    letter-spacing:1px;
+
+}
