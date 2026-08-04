@@ -7,46 +7,84 @@
     <title>BRSTOWC | Recepti</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/recipes.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
+
 <header class="navbar">
-    <div class="logo">BRSTOWC</div>
+
+    <div class="brand">
+        <span class="brand-name">BRSTOWC</span>
+    </div>
 
     <nav>
         <a href="index.html">Domov</a>
         <a href="recipes.html">Recepti</a>
         <a href="workout.html">Workout</a>
     </nav>
+
 </header>
+
 
 
 <main class="recipes-page">
 
+
+<section class="recipes-header">
+
+    <span>COMMUNITY COOKBOOK</span>
+
     <h1>Recepti</h1>
 
-    <div class="filters">
-        <button>Vsi</button>
-        <button>Fit</button>
-        <button>Sladice</button>
-        <button>Kosilo</button>
-    </div>
+    <p>
+        Deli svoje recepte in odkrij nove okuse.
+    </p>
+
+</section>
 
 
-    <button class="add-recipe">
-        + Dodaj recept
+
+<div class="filters">
+
+    <button class="active">
+        Vsi
     </button>
 
+    <button>
+        Fit
+    </button>
 
-    <section class="recipe-grid">
+    <button>
+        Sladice
+    </button>
 
-        <!-- Tukaj bodo kasneje recepti iz Firebase -->
+    <button>
+        Kosilo
+    </button>
 
-    </section>
+</div>
+
+
+
+<button class="add-recipe">
+    + Dodaj recept
+</button>
+
+
+
+<section class="recipe-grid">
+
+    <!-- recepti iz Firebase pridejo sem -->
+
+</section>
 
 
 </main>
+
 
 
 <script src="js/main.js"></script>
