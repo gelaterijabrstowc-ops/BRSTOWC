@@ -249,3 +249,40 @@ body::before {
     url("https://www.transparenttextures.com/patterns/paper-fibers.png");
 
 }
+
+.est {
+    font-size: 12px;
+    letter-spacing: 6px;
+    opacity: 0.9;
+}
+
+
+.hero h1 {
+    margin: 15px 0 5px;
+}
+
+
+.subtitle {
+
+    display: block;
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    color: #e8d2b5;
+
+}
+
+
+.divider {
+
+    width: 120px;
+
+    height: 1px;
+
+    background: #e8d2b5;
+
+    margin: 25px auto;
+
+}
