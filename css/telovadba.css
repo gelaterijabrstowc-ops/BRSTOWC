@@ -1,1 +1,207 @@
+/* =========================
+   BRSTOWC - TELOVADBA CSS
+========================= */
 
+
+/* GLAVA TELOVADBE */
+
+.workout-header {
+
+    text-align: center;
+
+    padding: 50px 20px;
+
+}
+
+
+.workout-header h1 {
+
+    font-size: 45px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.workout-header p {
+
+    font-size: 20px;
+
+}
+
+
+
+
+
+/* FILTRI */
+
+.workout-filters {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    padding: 20px;
+
+}
+
+
+
+
+
+.workout-filters button {
+
+    padding: 12px 25px;
+
+    border-radius: 20px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+}
+
+
+
+
+
+.workout-filters button:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+
+
+
+/* KARTICE TRENINGOV */
+
+.workouts-container {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 30px;
+
+    max-width: 1200px;
+
+    margin: 40px auto;
+
+    padding: 20px;
+
+}
+
+
+
+
+
+.workout-card {
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    transition: 0.3s;
+
+}
+
+
+
+
+
+.workout-card:hover {
+
+    transform: translateY(-5px);
+
+}
+
+
+
+
+
+.workout-card h2 {
+
+    font-size: 28px;
+
+    margin-bottom: 15px;
+
+}
+
+
+
+
+
+.workout-card ul {
+
+    padding-left: 20px;
+
+}
+
+
+
+
+
+.workout-card li {
+
+    margin-bottom: 10px;
+
+    font-size: 17px;
+
+}
+
+
+
+
+
+/* POSAMEZNA VAJA */
+
+.exercise {
+
+    margin-top: 15px;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+}
+
+
+
+
+
+.exercise h3 {
+
+    margin: 0 0 10px 0;
+
+}
+
+
+
+
+
+/* MOBILNI PRIKAZ */
+
+@media (max-width: 700px) {
+
+
+    .workout-header h1 {
+
+        font-size: 35px;
+
+    }
+
+
+    .workouts-container {
+
+        padding: 15px;
+
+    }
+
+
+}
