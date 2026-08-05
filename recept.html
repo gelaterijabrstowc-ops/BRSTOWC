@@ -1,1 +1,157 @@
+<!DOCTYPE html>
+<html lang="sl">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BRSTOWC - Recept</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/recept.css">
+</head>
+
+
+<body>
+
+<header>
+
+    <div class="logo">
+        BRSTOWC
+    </div>
+
+    <nav>
+        <a href="index.html">Domov</a>
+        <a href="recepti.html">Recepti</a>
+        <a href="telovadba.html">Telovadba</a>
+    </nav>
+
+</header>
+
+
+<main>
+
+    <section class="recipe-container">
+
+
+        <div class="recipe-image">
+
+            <img id="recipeImage" src="" alt="Slika recepta">
+
+        </div>
+
+
+        <div class="recipe-info">
+
+            <h1 id="recipeTitle">
+                Nalaganje recepta...
+            </h1>
+
+
+            <p>
+                Avtor:
+                <span id="recipeAuthor"></span>
+            </p>
+
+
+            <p>
+                Kategorija:
+                <span id="recipeCategory"></span>
+            </p>
+
+
+            <hr>
+
+
+            <h2>Sestavine</h2>
+
+            <p id="recipeIngredients">
+                
+            </p>
+
+
+            <h2>Priprava</h2>
+
+            <p id="recipePreparation">
+
+            </p>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <section class="comments-section">
+
+
+        <h2>Mnenja</h2>
+
+
+        <div id="commentsList">
+
+            <!-- Komentarji se naložijo iz Firestore -->
+
+        </div>
+
+
+
+        <div class="comment-form">
+
+
+            <h3>Dodaj mnenje</h3>
+
+
+            <input 
+                type="text" 
+                id="commentAuthor"
+                placeholder="Tvoje ime"
+            >
+
+
+            <textarea
+                id="commentText"
+                placeholder="Napiši svoje mnenje..."
+            ></textarea>
+
+
+            <button id="addComment">
+                Objavi mnenje
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<footer>
+
+    <p>
+        © 2026 BRSTOWC
+    </p>
+
+</footer>
+
+
+
+<!-- Firebase -->
+<script type="module" src="firebase/firebase-config.js"></script>
+
+
+<!-- JavaScript za recept -->
+<script type="module" src="js/recept.js"></script>
+
+<script type="module" src="js/komentarji.js"></script>
+
+
+</body>
+
+</html>
