@@ -1,1 +1,197 @@
+<!DOCTYPE html>
+<html lang="sl">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BRSTOWC - Dodaj recept</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dodaj-recept.css">
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+        BRSTOWC
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">Domov</a>
+        <a href="recepti.html">Recepti</a>
+        <a href="telovadba.html">Telovadba</a>
+
+    </nav>
+
+
+</header>
+
+
+
+
+<main>
+
+
+<section class="add-recipe-container">
+
+
+    <h1>
+        Dodaj recept
+    </h1>
+
+
+    <form id="recipeForm">
+
+
+
+        <label for="author">
+            Ime avtorja
+        </label>
+
+        <input 
+            type="text"
+            id="author"
+            placeholder="Vpiši svoje ime"
+            required
+        >
+
+
+
+        <label for="title">
+            Ime recepta
+        </label>
+
+        <input 
+            type="text"
+            id="title"
+            placeholder="Primer: Proteinske palačinke"
+            required
+        >
+
+
+
+        <label for="category">
+            Kategorija
+        </label>
+
+
+        <select id="category" required>
+
+            <option value="">
+                Izberi kategorijo
+            </option>
+
+            <option value="fit kosilo">
+                Fit kosilo
+            </option>
+
+            <option value="zajtrk">
+                Zajtrk
+            </option>
+
+            <option value="sladoled">
+                Sladoled
+            </option>
+
+            <option value="drugo">
+                Drugo
+            </option>
+
+        </select>
+
+
+
+
+        <label for="image">
+            Slika recepta (PNG)
+        </label>
+
+
+        <input 
+            type="file"
+            id="image"
+            accept="image/png"
+            required
+        >
+
+
+
+
+
+        <label for="ingredients">
+            Sestavine
+        </label>
+
+
+        <textarea
+            id="ingredients"
+            placeholder="Napiši sestavine..."
+            required
+        ></textarea>
+
+
+
+
+
+        <label for="preparation">
+            Priprava
+        </label>
+
+
+        <textarea
+            id="preparation"
+            placeholder="Opiši pripravo..."
+            required
+        ></textarea>
+
+
+
+
+
+        <button type="submit">
+            Objavi recept
+        </button>
+
+
+
+    </form>
+
+
+
+    <p id="message"></p>
+
+
+</section>
+
+
+</main>
+
+
+
+
+<footer>
+
+    <p>
+        © 2026 BRSTOWC
+    </p>
+
+</footer>
+
+
+
+
+<script type="module" src="firebase/firebase-config.js"></script>
+
+<script type="module" src="js/dodaj-recept.js"></script>
+
+
+</body>
+
+</html>
