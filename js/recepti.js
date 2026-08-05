@@ -1,144 +1,160 @@
-const recipeModal = document.getElementById("recipeModal");
+// =========================
+// BRSTOWC - RECEPTI JS
+// =========================
 
 
-// ODPRE FORMULAR
-
-function openRecipeForm(){
-
-    recipeModal.style.display = "flex";
-
-}
+import { db } from "../firebase/firebase-config.js";
 
 
-// ZAPRE FORMULAR
-
-function closeRecipeForm(){
-
-    recipeModal.style.display = "none";
-
-}
+import {
+    collection,
+    getDocs
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 
 
-// SHRANJENI RECEPTI
-
-let recipes = JSON.parse(localStorage.getItem("recipes")) || [];
 
 
+const recipesContainer = document.querySelector("#recipesContainer");
 
-// OBJAVA RECEPTA
+const searchInput = document.querySelector("#searchInput");
 
-function addRecipe(){
-
-
-    const name = document.getElementById("recipeName").value;
-    const category = document.getElementById("recipeCategory").value;
-    const ingredients = document.getElementById("recipeIngredients").value;
-    const steps = document.getElementById("recipeSteps").value;
-    const imageInput = document.getElementById("recipeImage");
+const categoryButtons = document.querySelectorAll("[data-category]");
 
 
-    if(name === "" || ingredients === "" || steps === ""){
 
-        alert("Izpolni vsa polja!");
-        return;
+let allRecipes = [];
+
+
+
+
+
+// NALOŽI RECEPTE IZ FIRESTORE
+
+async function loadRecipes() {
+
+
+    try {
+
+
+        const querySnapshot = await getDocs(
+            collection(db, "recipes")
+        );
+
+
+
+        allRecipes = [];
+
+
+
+        querySnapshot.forEach((doc) => {
+
+
+            allRecipes.push({
+
+                id: doc.id,
+
+                ...doc.data()
+
+            });
+
+
+        });
+
+
+
+
+        displayRecipes(allRecipes);
+
+
+
+    } catch (error) {
+
+
+        console.error(
+            "Napaka pri nalaganju receptov:",
+            error
+        );
+
 
     }
 
 
-    let image = "";
-
-
-    if(imageInput.files.length > 0){
-
-        image = URL.createObjectURL(imageInput.files[0]);
-
-    }
-
-
-
-    const recipe = {
-
-        id: Date.now(),
-        name,
-        category,
-        ingredients,
-        steps,
-        image
-
-    };
-
-
-    recipes.push(recipe);
-
-
-    localStorage.setItem(
-        "recipes",
-        JSON.stringify(recipes)
-    );
-
-
-    displayRecipes();
-
-
-    closeRecipeForm();
-
-
 }
+
+
 
 
 
 // PRIKAZ RECEPTOV
 
-function displayRecipes(){
+function displayRecipes(recipes) {
 
 
-    const grid = document.getElementById("recipeGrid");
-
-    grid.innerHTML = "";
+    recipesContainer.innerHTML = "";
 
 
-    recipes.forEach(recipe => {
 
 
-        grid.innerHTML += `
-
-        <article class="recipe-card">
+    if (recipes.length === 0) {
 
 
-            ${
-                recipe.image
-                ?
-                `<img src="${recipe.image}">`
-                :
-                ""
-            }
+        recipesContainer.innerHTML =
+            "<p>Ni najdenih receptov.</p>";
+
+        return;
+
+    }
 
 
-            <div class="recipe-content">
 
 
-                <span class="recipe-category">
-                    ${recipe.category}
-                </span>
+    recipes.forEach((recipe) => {
 
 
-                <h3>
-                    ${recipe.name}
-                </h3>
+
+        const card = document.createElement("div");
 
 
-                <p>
-                    ${recipe.ingredients}
-                </p>
+        card.className = "recipe-card";
 
 
-            </div>
 
 
-        </article>
+        card.innerHTML = `
+
+            <img 
+                src="${recipe.imageURL}" 
+                alt="${recipe.title}"
+            >
+
+
+            <h2>
+                ${recipe.title}
+            </h2>
+
+
+            <p>
+                Avtor: ${recipe.author}
+            </p>
+
+
+            <p>
+                ${recipe.category}
+            </p>
+
+
+            <a href="recept.html?id=${recipe.id}">
+                Ogled recepta
+            </a>
 
         `;
+
+
+
+
+        recipesContainer.appendChild(card);
+
 
 
     });
@@ -148,6 +164,90 @@ function displayRecipes(){
 
 
 
-// ZAGON
 
-displayRecipes();
+
+// FILTRIRANJE PO KATEGORIJI
+
+categoryButtons.forEach(button => {
+
+
+
+    button.addEventListener("click", () => {
+
+
+
+        const category = button.dataset.category;
+
+
+
+        if (category === "vse") {
+
+
+            displayRecipes(allRecipes);
+
+
+            return;
+
+        }
+
+
+
+
+        const filtered = allRecipes.filter(recipe =>
+
+            recipe.category === category
+
+        );
+
+
+
+        displayRecipes(filtered);
+
+
+
+    });
+
+
+
+});
+
+
+
+
+
+
+
+// ISKANJE
+
+searchInput.addEventListener("input", () => {
+
+
+
+    const search = searchInput.value.toLowerCase();
+
+
+
+
+    const filtered = allRecipes.filter(recipe =>
+
+
+        recipe.title.toLowerCase().includes(search)
+
+
+    );
+
+
+
+    displayRecipes(filtered);
+
+
+
+});
+
+
+
+
+
+
+
+loadRecipes();
