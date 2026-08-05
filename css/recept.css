@@ -1,1 +1,254 @@
+/* =========================
+   BRSTOWC - RECEPT CSS
+========================= */
 
+
+/* GLAVNI RECEPT */
+
+.recipe-container {
+
+    max-width: 1000px;
+
+    margin: 40px auto;
+
+    padding: 20px;
+
+}
+
+
+
+/* SLIKA RECEPTA */
+
+.recipe-image {
+
+    width: 100%;
+
+    text-align: center;
+
+}
+
+
+
+.recipe-image img {
+
+    width: 100%;
+
+    max-width: 700px;
+
+    border-radius: 15px;
+
+    object-fit: cover;
+
+}
+
+
+
+
+
+/* PODATKI RECEPTA */
+
+.recipe-info {
+
+    margin-top: 30px;
+
+}
+
+
+
+.recipe-info h1 {
+
+    font-size: 42px;
+
+    margin-bottom: 15px;
+
+}
+
+
+
+.recipe-info p {
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+}
+
+
+
+.recipe-info span {
+
+    font-weight: bold;
+
+}
+
+
+
+.recipe-info h2 {
+
+    margin-top: 35px;
+
+    font-size: 28px;
+
+}
+
+
+
+
+
+/* LOČILNA ČRTA */
+
+.recipe-info hr {
+
+    margin: 30px 0;
+
+}
+
+
+
+
+/* MNENJA */
+
+.comments-section {
+
+    max-width: 900px;
+
+    margin: 50px auto;
+
+    padding: 20px;
+
+}
+
+
+
+.comments-section h2 {
+
+    font-size: 32px;
+
+}
+
+
+
+
+
+/* POSAMEZEN KOMENTAR */
+
+.comment {
+
+    padding: 15px;
+
+    margin: 15px 0;
+
+    border-radius: 10px;
+
+}
+
+
+
+.comment h4 {
+
+    margin: 0 0 10px 0;
+
+}
+
+
+
+.comment p {
+
+    margin: 0;
+
+    line-height: 1.5;
+
+}
+
+
+
+
+
+/* OBRAZEC ZA MNENJE */
+
+.comment-form {
+
+    margin-top: 40px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
+
+
+.comment-form input,
+
+.comment-form textarea {
+
+
+    padding: 12px;
+
+
+    border-radius: 8px;
+
+
+    font-size: 16px;
+
+
+}
+
+
+
+.comment-form textarea {
+
+    min-height: 120px;
+
+    resize: vertical;
+
+}
+
+
+
+.comment-form button {
+
+
+    padding: 14px;
+
+
+    border: none;
+
+
+    border-radius: 10px;
+
+
+    font-size: 17px;
+
+
+    cursor: pointer;
+
+
+}
+
+
+
+
+
+/* MOBILNI PRIKAZ */
+
+@media (max-width: 700px) {
+
+
+    .recipe-info h1 {
+
+        font-size: 32px;
+
+    }
+
+
+    .recipe-container {
+
+        padding: 15px;
+
+    }
+
+
+}
