@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="sl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,185 +15,97 @@
 
 <body>
 
+    <header class="navbar">
 
-<header class="navbar">
-
-    <div class="brand">
-        <span class="brand-name">BRSTOWC</span>
-    </div>
-
-    <nav>
-        <a href="index.html">Domov</a>
-        <a href="recipes.html">Recepti</a>
-        <a href="workout.html">Workout</a>
-    </nav>
-
-</header>
-
-
-
-<main class="recipes-page">
-
-
-<section class="recipes-header">
-
-    <span>COMMUNITY COOKBOOK</span>
-
-    <h1>Recepti</h1>
-
-    <p>
-        Deli svoje recepte in odkrij nove okuse.
-    </p>
-
-</section>
-
-
-
-<div class="filters">
-
-    <button class="active">
-        Vsi
-    </button>
-
-    <button>
-        Fit
-    </button>
-
-    <button>
-        Sladice
-    </button>
-
-    <button>
-        Kosilo
-    </button>
-
-</div>
-
-
-
-<button class="add-recipe" onclick="openRecipeForm()">
-    + Dodaj recept
-</button>
-
-
-
-<section class="recipe-grid" id="recipeGrid">
-
-</section>
-
-
-<article class="recipe-card">
-
-    <img src="images/recipe-images/pancakes.png" alt="Proteinske palačinke">
-
-    <div class="recipe-info">
-
-        <span class="category">
-            FIT
-        </span>
-
-        <h2>
-            Proteinske palačinke
-        </h2>
-
-        <div class="details">
-            <span>⏱ 15 min</span>
-            <span>★★★★★</span>
+        <div class="brand">
+            <span class="brand-name">BRSTOWC</span>
         </div>
 
-    </div>
+        <nav>
+            <a href="index.html">Domov</a>
+            <a href="recipes.html">Recepti</a>
+            <a href="workout.html">Workout</a>
+        </nav>
 
-</article>
+    </header>
 
+    <main class="recipes-page">
 
+        <section class="recipes-header">
 
-<article class="recipe-card">
+            <span>COMMUNITY COOKBOOK</span>
 
-    <img src="images/recipe-images/cake.png" alt="Čokoladna sladica">
+            <h1>Recepti</h1>
 
-    <div class="recipe-info">
+            <p>
+                Deli svoje recepte in odkrij nove okuse.
+            </p>
 
-        <span class="category">
-            SLADICE
-        </span>
+        </section>
 
-        <h2>
-            Čokoladni mousse
-        </h2>
+        <div class="filters">
 
-        <div class="details">
-            <span>⏱ 30 min</span>
-            <span>★★★★★</span>
+            <button class="active">Vsi</button>
+            <button>Fit</button>
+            <button>Sladice</button>
+            <button>Kosilo</button>
+
         </div>
 
-    </div>
+        <button class="add-recipe" onclick="openRecipeForm()">
+            + Dodaj recept
+        </button>
 
-</article>
+        <!-- Recepti se bodo ustvarili z JavaScript -->
+        <section class="recipe-grid" id="recipeGrid"></section>
 
+    </main>
 
-
-<article class="recipe-card">
-
-    <img src="images/recipe-images/chicken.png" alt="Piščanec z rižem">
-
-    <div class="recipe-info">
-
-        <span class="category">
-            KOSILO
-        </span>
-
-        <h2>
-            Piščanec z rižem
-        </h2>
-
-        <div class="details">
-            <span>⏱ 45 min</span>
-            <span>★★★★★</span>
-        </div>
-
-    </div>
-
-</article>
-
-
-</section>
-
-</main>
+    <!-- MODAL -->
 
     <div class="recipe-modal" id="recipeModal">
 
-  <div class="recipe-form">
+        <div class="recipe-form">
 
-    <span class="close" onclick="closeRecipeForm()">×</span>
+            <span class="close" onclick="closeRecipeForm()">&times;</span>
 
-    <h2>Nov recept</h2>
+            <h2>Nov recept</h2>
 
-    <input id="recipeName" type="text" placeholder="Ime recepta">
+            <input
+                id="recipeName"
+                type="text"
+                placeholder="Ime recepta"
+            >
 
-    <select id="recipeCategory">
-        <option value="Fit">Fit</option>
-        <option value="Sladice">Sladice</option>
-        <option value="Kosilo">Kosilo</option>
-    </select>
+            <select id="recipeCategory">
 
-    <textarea id="recipeIngredients" placeholder="Sestavine"></textarea>
+                <option value="Fit">Fit</option>
+                <option value="Sladice">Sladice</option>
+                <option value="Kosilo">Kosilo</option>
 
-    <textarea id="recipeSteps" placeholder="Postopek"></textarea>
+            </select>
 
-<button class="add-recipe" onclick="openRecipeForm()">
-    + Dodaj recept
-</button>
+            <textarea
+                id="recipeIngredients"
+                placeholder="Sestavine"
+            ></textarea>
 
-</div>
+            <textarea
+                id="recipeSteps"
+                placeholder="Postopek"
+            ></textarea>
+
+            <button onclick="addRecipe()">
+                Objavi recept
+            </button>
+
+        </div>
 
     </div>
 
-</div>
-
-
-<script src="js/main.js"></script>
+    <script src="js/main.js"></script>
+    <script type="module" src="js/recipes.js"></script>
 
 </body>
-</html>
 
-<script type="module" src="js/recipes.js"></script>
+</html>
