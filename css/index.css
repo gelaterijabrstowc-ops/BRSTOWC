@@ -1,1 +1,185 @@
+/* =========================
+   BRSTOWC - INDEX CSS
+========================= */
 
+
+/* HERO SEKCIJA */
+
+.hero {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+
+.hero h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+
+.hero p {
+    font-size: 22px;
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+
+
+/* GUMBI */
+
+.hero-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+
+.button {
+
+    padding: 14px 30px;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+
+    font-size: 18px;
+
+    transition: 0.3s;
+
+}
+
+
+.button:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+
+
+/* PREDSTAVITEV */
+
+.about {
+
+    text-align: center;
+
+    padding: 50px 20px;
+
+}
+
+
+.about h2 {
+
+    font-size: 35px;
+
+}
+
+
+.about p {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+}
+
+
+
+
+/* KARTICE */
+
+.features {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    padding: 50px 20px;
+
+    flex-wrap: wrap;
+
+}
+
+
+
+.card {
+
+    width: 300px;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+}
+
+
+
+.card h3 {
+
+    font-size: 25px;
+
+}
+
+
+
+.card p {
+
+    line-height: 1.5;
+
+}
+
+
+
+.card a {
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+}
+
+
+
+/* MOBILNI PRIKAZ */
+
+@media (max-width: 700px) {
+
+
+    .hero h1 {
+
+        font-size: 40px;
+
+    }
+
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+    }
+
+
+    .features {
+
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+
+}
