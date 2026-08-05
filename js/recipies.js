@@ -1,108 +1,153 @@
-function openRecipeForm() {
-    document.getElementById("recipeModal").style.display = "flex";
+const recipeModal = document.getElementById("recipeModal");
+
+
+// ODPRE FORMULAR
+
+function openRecipeForm(){
+
+    recipeModal.style.display = "flex";
+
 }
 
-function closeRecipeForm() {
-    document.getElementById("recipeModal").style.display = "none";
+
+// ZAPRE FORMULAR
+
+function closeRecipeForm(){
+
+    recipeModal.style.display = "none";
+
 }
 
-function addRecipe() {
 
-    const name = document.getElementById("recipeName").value.trim();
+
+// SHRANJENI RECEPTI
+
+let recipes = JSON.parse(localStorage.getItem("recipes")) || [];
+
+
+
+// OBJAVA RECEPTA
+
+function addRecipe(){
+
+
+    const name = document.getElementById("recipeName").value;
     const category = document.getElementById("recipeCategory").value;
-    const ingredients = document.getElementById("recipeIngredients").value.trim();
-    const steps = document.getElementById("recipeSteps").value.trim();
+    const ingredients = document.getElementById("recipeIngredients").value;
+    const steps = document.getElementById("recipeSteps").value;
+    const imageInput = document.getElementById("recipeImage");
 
-    if (!name || !ingredients || !steps) {
-        alert("Izpolni vsa polja.");
+
+    if(name === "" || ingredients === "" || steps === ""){
+
+        alert("Izpolni vsa polja!");
         return;
+
     }
 
+
+    let image = "";
+
+
+    if(imageInput.files.length > 0){
+
+        image = URL.createObjectURL(imageInput.files[0]);
+
+    }
+
+
+
     const recipe = {
+
         id: Date.now(),
         name,
         category,
         ingredients,
-        steps
+        steps,
+        image
+
     };
 
-    const recipes = JSON.parse(localStorage.getItem("recipes")) || [];
 
     recipes.push(recipe);
 
-    localStorage.setItem("recipes", JSON.stringify(recipes));
 
-    document.getElementById("recipeName").value = "";
-    document.getElementById("recipeCategory").value = "Fit";
-    document.getElementById("recipeIngredients").value = "";
-    document.getElementById("recipeSteps").value = "";
+    localStorage.setItem(
+        "recipes",
+        JSON.stringify(recipes)
+    );
+
+
+    displayRecipes();
+
 
     closeRecipeForm();
 
-    displayRecipes();
+
 }
 
-function displayRecipes() {
 
-    const recipeGrid = document.getElementById("recipeGrid");
 
-    recipeGrid.innerHTML = "";
+// PRIKAZ RECEPTOV
 
-    const recipes = JSON.parse(localStorage.getItem("recipes")) || [];
+function displayRecipes(){
+
+
+    const grid = document.getElementById("recipeGrid");
+
+    grid.innerHTML = "";
+
 
     recipes.forEach(recipe => {
 
-        const card = document.createElement("article");
 
-        card.className = "recipe-card";
+        grid.innerHTML += `
 
-        card.innerHTML = `
-            <div class="recipe-info">
+        <article class="recipe-card">
 
-                <span class="category">${recipe.category}</span>
 
-                <h2>${recipe.name}</h2>
+            ${
+                recipe.image
+                ?
+                `<img src="${recipe.image}">`
+                :
+                ""
+            }
 
-                <p>${recipe.ingredients}</p>
 
-                <button onclick="viewRecipe(${recipe.id})">
-                    Ogled recepta
-                </button>
+            <div class="recipe-content">
+
+
+                <span class="recipe-category">
+                    ${recipe.category}
+                </span>
+
+
+                <h3>
+                    ${recipe.name}
+                </h3>
+
+
+                <p>
+                    ${recipe.ingredients}
+                </p>
+
 
             </div>
+
+
+        </article>
+
         `;
 
-        recipeGrid.appendChild(card);
 
     });
 
-}
-
-function viewRecipe(id) {
-
-    const recipes = JSON.parse(localStorage.getItem("recipes")) || [];
-
-    const recipe = recipes.find(r => r.id === id);
-
-    if (!recipe) return;
-
-    alert(
-        `${recipe.name}
-
-Sestavine:
-
-${recipe.ingredients}
-
-Postopek:
-
-${recipe.steps}`
-    );
 
 }
 
-window.openRecipeForm = openRecipeForm;
-window.closeRecipeForm = closeRecipeForm;
-window.addRecipe = addRecipe;
-window.viewRecipe = viewRecipe;
+
+
+// ZAGON
 
 displayRecipes();
