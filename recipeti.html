@@ -2,84 +2,57 @@
 <html lang="sl">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>BRSTOWC | Recepti</title>
-
-    <meta name="description" content="Objavi svoj recept ali odkrij nove ideje.">
+    <title>BRSTOWC - Recepti</title>
 
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/recipes.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="css/recepti.css">
 </head>
+
 
 <body>
 
-<header class="navbar">
 
-    <a href="index.html" class="brand">
-        <span class="brand-name">BRSTOWC</span>
-    </a>
+<header>
 
-    <nav class="nav-links">
+    <div class="logo">
+        BRSTOWC
+    </div>
+
+
+    <nav>
 
         <a href="index.html">Domov</a>
-        <a href="recipes.html" class="active">Recepti</a>
-        <a href="workout.html">Workout</a>
+        <a href="recepti.html">Recepti</a>
+        <a href="telovadba.html">Telovadba</a>
 
     </nav>
+
 
 </header>
 
 
 
-<main class="recipes-page">
+<main>
 
 
+<section class="recipes-header">
 
-<section class="recipes-hero">
 
-    <span class="hero-label">
-        COMMUNITY COOKBOOK
-    </span>
+    <h1>Recepti</h1>
 
-    <h1>
-        Recepti
-    </h1>
 
     <p>
-        Odkrij recepte skupnosti ali objavi svojega.
+        Poišči fit recepte ali dodaj svojega.
     </p>
 
-</section>
 
-
-
-<section class="toolbar">
-
-    <div class="search-box">
-
-        <input
-            type="search"
-            id="searchRecipe"
-            placeholder="Išči recept..."
-        >
-
-    </div>
-
-    <button
-        class="add-recipe"
-        onclick="openRecipeForm()"
-    >
+    <a href="dodaj-recept.html" class="button">
         + Dodaj recept
-    </button>
+    </a>
+
 
 </section>
 
@@ -87,125 +60,79 @@
 
 <section class="filters">
 
-    <button class="filter active">
-        Vsi
-    </button>
 
-    <button class="filter">
-        Fit
-    </button>
-
-    <button class="filter">
-        Sladice
-    </button>
-
-    <button class="filter">
-        Kosilo
-    </button>
-
-</section>
+    <input 
+        type="text" 
+        id="searchInput"
+        placeholder="Išči recept..."
+    >
 
 
+    <div class="categories">
 
-<section
-    id="recipeGrid"
-    class="recipe-grid"
->
-
-    <!-- Recepti se ustvarijo z JavaScript -->
-
-</section>
+        <button data-category="vse">
+            Vsi
+        </button>
 
 
-
-<div
-    class="recipe-modal"
-    id="recipeModal"
->
-
-    <div class="recipe-form">
-
-        <span
-            class="close"
-            onclick="closeRecipeForm()"
-        >
-            &times;
-        </span>
-
-        <h2>
-            Dodaj recept
-        </h2>
-
-        <input
-            id="recipeName"
-            type="text"
-            placeholder="Ime recepta"
-        >
-
-        <select
-            id="recipeCategory"
-        >
-
-            <option value="Fit">
-                Fit
-            </option>
-
-            <option value="Sladice">
-                Sladice
-            </option>
-
-            <option value="Kosilo">
-                Kosilo
-            </option>
-
-        </select>
-
-        <input
-            id="recipeImage"
-            type="file"
-            accept="image/*"
-        >
-
-                <textarea
-            id="recipeIngredients"
-            placeholder="Sestavine (vsako v novo vrstico)"
-        ></textarea>
+        <button data-category="fit kosilo">
+            Fit kosilo
+        </button>
 
 
-        <textarea
-            id="recipeSteps"
-            placeholder="Postopek priprave"
-        ></textarea>
+        <button data-category="zajtrk">
+            Zajtrk
+        </button>
 
 
-        <button
-            class="publish-recipe"
-            onclick="addRecipe()"
-        >
-            Objavi recept
+        <button data-category="sladoled">
+            Sladoled
+        </button>
+
+
+        <button data-category="drugo">
+            Drugo
         </button>
 
 
     </div>
 
-</div>
+
+</section>
+
+
+
+
+<section class="recipes-container" id="recipesContainer">
+
+
+    <!-- Recepti se naložijo iz Firestore -->
+
+
+</section>
+
 
 
 </main>
 
 
 
-<footer class="footer">
+
+<footer>
 
     <p>
-        © 2026 BRSTOWC. Vse pravice pridržane.
+        © 2026 BRSTOWC
     </p>
 
 </footer>
 
 
 
-<script src="js/recipes.js"></script>
+
+<script type="module" src="firebase/firebase-config.js"></script>
+
+<script type="module" src="js/recepti.js"></script>
+
 
 </body>
 
